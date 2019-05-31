@@ -2,15 +2,16 @@
   "name": "prettyearth",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node start.js"
+    "start": "electron ."
   },
   "author": "Evert De Spiegeleer",
   "license": "ISC",
   "dependencies": {
+    "electron": "^5.0.2",
     "esm": "^3.2.25",
-    "wallpaper": "^4.4.0"
+    "menubar": "^5.2.3"
   }
 }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PrettyEarth</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="arrow"></div>
+        <div class="centerbox">
+            <div class="pagescroller">
+                <div class="box default">
+                    <div class="info">
+                        <div class="text">
+                            <div class="region">REGION</div>
+                            <div class="country">COUNTRY</div>
+                            <div class="wikitext">Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ad quo quibusdam beatae officiis similique ducimus numquam dolores natus vero pariatur nemo unde ipsum deserunt nobis necessitatibus, voluptate corporis error.</div>
+                        </div>
+                    </div>
+                    <div class="map">
+                        <div class="shadow"></div>
+                        <img class="mapimg"></img>
+                        <div class="goToMaps">
+                            <div class="arrow">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                            <div class="text">
+                                Google<br>Maps
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box setBg">
+                    <button class="newBg"><i class="fas fa-magic"></i>&nbsp;&nbsp;New Wallpaper!</button>
+                </div>
+                <div class="box settings">
+                    settings
+                </div>
+                <div class="box information">
+                    <div class="infobox">
+                        <center>
+                            PrettyEarth is an <a target="_blank" href="https://github.com/evertdespiegeleer/PrettyEarth">open-source</a> project developed with ❤️by <a target="_blank" href="https://github.com/evertdespiegeleer"><br>Evert De Spiegeleer</a><br>
+                            <br>
+                            <br>
+                            <br>
+                            All images are property of <a target="_blank" href="https://earthview.withgoogle.com/">Google</a>.<br>
+                            <br>
+                            <a target="_blank" href="https://github.com/limhenry/earthview">List</a> of images and locations by <a target="_blank" href="https://github.com/limhenry">@limhenry</a><br>
+                            <br>
+                            Icons by <a target="_blank" href="https://fontawesome.com/">FontAwesome</a>
+                        </center>
+                    </div>
+                </div>
+                <div class="box no_internet_connection">
+                    <div class="text">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <br>PrettyEarth needs a working internet connection.
+                    </div>
+                </div>
+            </div>
+            <div class="menubar">
+                <div class="el active" link=".default"><i class="fas fa-newspaper"></i></div>
+                <div class="el" link=".setBg"><i class="fas fa-globe-europe"></i></div>
+                <!--<div class="el" link=".settings"><i class="fas fa-cog"></i></div>-->
+                <div class="el" link=".information"><i class="fas fa-info-circle"></i></div>
+            </div>
+        </div>
+    </div>
+    <script src="gui.js"></script>
+</body>
+</html>

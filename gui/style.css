@@ -1,0 +1,316 @@
+body, html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 0;
+}
+
+body *, html * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .content, html .content {
+  position: absolute;
+  height: 200px;
+  width: 300px;
+}
+
+body .content > .arrow, html .content > .arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent #fafafa transparent;
+  left: 50%;
+  -webkit-transform: translate(-50%, 3px);
+          transform: translate(-50%, 3px);
+  z-index: 2;
+}
+
+body .content .centerbox, html .content .centerbox {
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fafafa;
+  border-radius: 10px;
+  border: solid 0.5px #c8c8c8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .content .centerbox .pagescroller, html .content .centerbox .pagescroller {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 0;
+  overflow: hidden;
+}
+
+body .content .centerbox .pagescroller .box, html .content .centerbox .pagescroller .box {
+  float: left;
+  height: 100%;
+  background-color: #fafafa;
+  width: 100%;
+  font-size: 15px;
+}
+
+body .content .centerbox .pagescroller .box.default, html .content .centerbox .pagescroller .box.default {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background-color: transparent;
+}
+
+body .content .centerbox .pagescroller .box.default .info, html .content .centerbox .pagescroller .box.default .info {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  overflow: hidden;
+}
+
+body .content .centerbox .pagescroller .box.default .info .text, html .content .centerbox .pagescroller .box.default .info .text {
+  -webkit-user-select: text;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 155px;
+  height: calc(100% - 40px);
+  overflow-y: scroll;
+}
+
+body .content .centerbox .pagescroller .box.default .info .text .region, html .content .centerbox .pagescroller .box.default .info .text .region {
+  white-space: nowrap;
+  width: 100%;
+  font-size: 18px;
+  text-align: left;
+  font-weight: bold;
+}
+
+body .content .centerbox .pagescroller .box.default .info .text .country, html .content .centerbox .pagescroller .box.default .info .text .country {
+  text-align: left;
+  padding-left: 1px;
+  font-size: 10px;
+}
+
+body .content .centerbox .pagescroller .box.default .info .text .wikitext, html .content .centerbox .pagescroller .box.default .info .text .wikitext {
+  text-align: left;
+  padding-left: 1px;
+  font-size: 10px;
+  margin-top: 5px;
+  border-top: solid 0.5px #c8c8c8;
+  padding-top: 5px;
+}
+
+body .content .centerbox .pagescroller .box.default .map, html .content .centerbox .pagescroller .box.default .map {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: relative;
+}
+
+body .content .centerbox .pagescroller .box.default .map .mapimg, html .content .centerbox .pagescroller .box.default .map .mapimg {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: auto;
+}
+
+body .content .centerbox .pagescroller .box.default .map .shadow, html .content .centerbox .pagescroller .box.default .map .shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-box-shadow: inset 10px 0 40px -10px black;
+          box-shadow: inset 10px 0 40px -10px black;
+}
+
+body .content .centerbox .pagescroller .box.default .map .goToMaps, html .content .centerbox .pagescroller .box.default .map .goToMaps {
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  color: #FFF;
+}
+
+body .content .centerbox .pagescroller .box.default .map .goToMaps .arrow, html .content .centerbox .pagescroller .box.default .map .goToMaps .arrow {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 20px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+  font-size: 30px;
+}
+
+body .content .centerbox .pagescroller .box.default .map .goToMaps .text, html .content .centerbox .pagescroller .box.default .map .goToMaps .text {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 20px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-size: 15px;
+}
+
+body .content .centerbox .pagescroller .box.default .map:hover, html .content .centerbox .pagescroller .box.default .map:hover {
+  width: 50%;
+}
+
+body .content .centerbox .pagescroller .box.default .map:hover .goToMaps, html .content .centerbox .pagescroller .box.default .map:hover .goToMaps {
+  opacity: 1;
+}
+
+body .content .centerbox .pagescroller .box.setBg, html .content .centerbox .pagescroller .box.setBg {
+  position: relative;
+}
+
+body .content .centerbox .pagescroller .box.setBg button.newBg, html .content .centerbox .pagescroller .box.setBg button.newBg {
+  cursor: pointer;
+  position: absolute;
+  height: 45px;
+  width: 75%;
+  border: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: cornflowerblue;
+  color: #FFF;
+  font-size: 18px;
+  border-radius: 5px;
+  outline: none;
+  font-weight: 700;
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+}
+
+body .content .centerbox .pagescroller .box.setBg button.newBg:active, html .content .centerbox .pagescroller .box.setBg button.newBg:active {
+  background-color: #2f71e7;
+}
+
+body .content .centerbox .pagescroller .box.no_internet_connection, html .content .centerbox .pagescroller .box.no_internet_connection {
+  background-color: #e6e6e6;
+  position: relative;
+}
+
+body .content .centerbox .pagescroller .box.no_internet_connection .text, html .content .centerbox .pagescroller .box.no_internet_connection .text {
+  position: absolute;
+  height: 100%;
+  width: 65%;
+  color: #787878;
+  font-size: 13px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+  padding-top: 25px;
+}
+
+body .content .centerbox .pagescroller .box.no_internet_connection .text .fas, html .content .centerbox .pagescroller .box.no_internet_connection .text .fas {
+  font-size: 56px;
+  padding-bottom: 15px;
+}
+
+body .content .centerbox .pagescroller .box.information .infobox, html .content .centerbox .pagescroller .box.information .infobox {
+  font-size: 13px;
+  width: 75%;
+  height: 100%;
+  padding-top: 55px;
+  padding-bottom: 25px;
+  margin-left: 12.5%;
+  color: #787878;
+  overflow-y: scroll;
+}
+
+body .content .centerbox .pagescroller .box.information .infobox::-webkit-scrollbar, html .content .centerbox .pagescroller .box.information .infobox::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+body .content .centerbox .pagescroller .box.information .infobox a, html .content .centerbox .pagescroller .box.information .infobox a {
+  color: cornflowerblue;
+}
+
+body .content .centerbox .menubar, html .content .centerbox .menubar {
+  width: 100%;
+  font-size: 15px;
+  height: 30px;
+  border-top: solid 0.5px #c8c8c8;
+  color: #787878;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body .content .centerbox .menubar .el, html .content .centerbox .menubar .el {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+body .content .centerbox .menubar .el.active, html .content .centerbox .menubar .el.active {
+  color: cornflowerblue;
+}
+/*# sourceMappingURL=style.css.map */
