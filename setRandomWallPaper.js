@@ -27,7 +27,7 @@ export default (cb) => {
                         //console.log('download complete')
                         //Image downloaded
                         //Set as wallpaper
-                            setWallpaper(downloadloc, (err) => {
+                        setWallpaper(downloadloc, (err) => {
                             //console.log('wallpaper set')
                             //Remove file
                             fs.unlink(downloadloc, (err) => {
@@ -42,24 +42,24 @@ export default (cb) => {
                                     fs.unlinkSync(`${dataloc}/imageData.json`)
                                 } catch(err) {
                                 }
-                                    //file removed
-                                    //console.log('old meta removed')
-                                    //save data about wallpaper
-                                    fs.writeFile(`${dataloc}/imageData.json`, JSON.stringify(listObj), function(err) {
-                                        if(err) {
-                                            console.log(err)
-                                        }
-                                        //FILE SAVED!
-                                        //console.log('new meta saved')
-                                        if(cb) {
-                                            cb() //Callback
-                                        }
-                                    });
+                                //file removed
+                                //console.log('old meta removed')
+                                //save data about wallpaper
+                                fs.writeFile(`${dataloc}/imageData.json`, JSON.stringify(listObj), function(err) {
+                                    if(err) {
+                                        console.log(err)
+                                    }
+                                    //FILE SAVED!
+                                    //console.log('new meta saved')
+                                    if(cb) {
+                                        cb() //Callback
+                                    }
+                                });
                             })
                         })
                     }
                 });
-              });
+            });
         }
     })
 }

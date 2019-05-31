@@ -40,6 +40,6 @@ mb.on('ready', function ready () {
         e.preventDefault()
         require('electron').shell.openExternal(url)
         mb.window.hide()
-      });
+    });
 })
 exports.updateMapData = updateMapData
