@@ -1,9 +1,10 @@
 const listLocation = 'https://raw.githubusercontent.com/limhenry/earthview/master/earthview.json'
 import request from 'request'
-import wallpaper from 'wallpaper'
 import https from 'https'
 import fs from 'fs'
 import setWallpaper from './setWallpaper'
+import localDataLocation from './localDataLocation'
+const dataloc = localDataLocation()
 export default (cb) => {
     request({
         url: listLocation,
@@ -16,7 +17,7 @@ export default (cb) => {
             //Choose random image (+data)
             const listObj = list[Math.round(Math.random()*list.length)]
             const url = listObj.image;
-            const downloadloc = `./images/${url.split('/')[url.split('/').length-1]}`
+            const downloadloc = `${dataloc}/${url.split('/')[url.split('/').length-1]}`
             //const downloadloc = `./images/bg.jpg`
             let file = fs.createWriteStream(downloadloc)
             //console.log('wallpaper download')
@@ -38,22 +39,22 @@ export default (cb) => {
                                 //file removed, wallpaper set successfully!
                                 //remove old data
                                 try {
-                                    fs.unlinkSync('./images/imageData.json')
+                                    fs.unlinkSync(`${dataloc}/imageData.json`)
+                                } catch(err) {
+                                }
                                     //file removed
                                     //console.log('old meta removed')
                                     //save data about wallpaper
-                                    fs.writeFile('./images/imageData.json', JSON.stringify(listObj), function(err) {
+                                    fs.writeFile(`${dataloc}/imageData.json`, JSON.stringify(listObj), function(err) {
                                         if(err) {
-                                            return //console.log(err);
+                                            console.log(err)
                                         }
                                         //FILE SAVED!
                                         //console.log('new meta saved')
                                         if(cb) {
                                             cb() //Callback
                                         }
-                                    }); 
-                                } catch(err) {
-                                }
+                                    });
                             })
                         })
                     }

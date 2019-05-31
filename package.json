@@ -1,17 +1,25 @@
 {
   "name": "prettyearth",
+  "productName": "PrettyEarth",
   "version": "1.0.0",
-  "description": "",
+  "description": "description",
   "main": "start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=dist"
   },
   "author": "Evert De Spiegeleer",
   "license": "ISC",
   "dependencies": {
-    "electron": "^5.0.2",
+    "electron-packager": "^13.1.1",
     "esm": "^3.2.25",
-    "menubar": "^5.2.3"
+    "menubar": "^5.2.3",
+    "mkdirp": "^0.5.1",
+    "path": "^0.12.7",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "electron": "^5.0.2"
   }
 }

@@ -2,6 +2,8 @@ import setRandomWallPaper from './setRandomWallPaper';
 import menubar from'menubar'
 exports.setRandomWallPaper = setRandomWallPaper
 import fs from 'fs'
+import localDataLocation from './localDataLocation'
+const dataloc = localDataLocation()
 //Create menubar GUI (./gui/index.html)
 const mb = menubar({
     webPreferences:{
@@ -19,7 +21,7 @@ const mb = menubar({
 })
 
 const updateMapData = () => {
-    fs.readFile('./images/imageData.json', (err, data) => {  
+    fs.readFile(`${dataloc}/imageData.json`, (err, data) => {  
         if (err) 
         {console.log(err);
         }
