@@ -1,7 +1,7 @@
 PrettyEarth :earth_africa:
 ===
 
-Our planet is a beautiful place. The [Google Chrome Earth View extension](https://chrome.google.com/webstore/detail/earth-view-from-google-ea/bhloflhklmhfpedakmangadcdofhnnoh) by Google is a wonderful way to deliver stunning satellite images to us every time we open a new tab, inspiring us on our next web adventure. But why stop there? Why don't get impressed by these the wonders of the earth as well when gazing at this more important rectangle on our screen, our **wallpaper**. PrettyEarth now grants your the opportunity to bring our blue marble to your desktop.
+Our planet is a beautiful place. The [Google Chrome Earth View extension](https://chrome.google.com/webstore/detail/earth-view-from-google-ea/bhloflhklmhfpedakmangadcdofhnnoh) by Google is a wonderful way to deliver stunning satellite images to us every time we open a new tab, inspiring us on our next web adventure. But why stop there? Why don't get impressed by these the wonders of the earth as well when gazing at this more important rectangle on our screen, our **wallpaper**. PrettyEarth now grants you the opportunity to bring our blue marble to your desktop.
 
 ## Technical crap
 
