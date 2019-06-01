@@ -132,3 +132,4 @@ typings/
 */imageData.json
 *.jpg
 dist/
+design/
