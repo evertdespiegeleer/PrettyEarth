@@ -3,7 +3,7 @@ import request from 'request'
 import https from 'https'
 import fs from 'fs'
 import setWallpaper from './setWallpaper'
-import localDataLocation from './localDataLocation'
+import {localDataLocation} from './localDataLocation'
 const dataloc = localDataLocation()
 export default (cb) => {
     request({

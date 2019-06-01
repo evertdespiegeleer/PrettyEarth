@@ -4,8 +4,10 @@ import menubar from'menubar'
 exports.setRandomWallPaper = setRandomWallPaper
 import fs from 'fs'
 import path from 'path'
-import localDataLocation from './localDataLocation'
+import {localDataLocation, applocation} from './localDataLocation'
+import AutoLaunch from 'auto-launch'
 const dataloc = localDataLocation()
+const apploc = applocation()
 //Create menubar GUI (./gui/index.html)
 const mb = menubar({
     webPreferences:{
@@ -31,6 +33,11 @@ const updateMapData = () => {
     });
 }
 
+let AutoLauncher = new AutoLaunch({
+    name: 'PrettyEarth',
+    path: apploc,
+})
+
 const quit = () => {
     mb.window.close()
     process.exit()
@@ -52,3 +59,4 @@ mb.on('ready', function ready () {
 })
 exports.updateMapData = updateMapData
 exports.quit = quit
+exports.AutoLauncher = AutoLauncher

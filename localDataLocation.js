@@ -1,6 +1,6 @@
 import mkdirp from 'mkdirp'
 
-const localDataLocation = () => {
+export const localDataLocation = () => {
     const osvar = process.platform;
     if (osvar == 'darwin') { //currently only macOS is supported.
         const apploc = `${require('os').homedir()}/Library/Caches/evertdespiegeleer/PrettyEarth`
@@ -11,4 +11,11 @@ const localDataLocation = () => {
     }
 }
 
-export default localDataLocation
+export const applocation = () => {
+    const osvar = process.platform;
+    if (osvar == 'darwin') { //currently only macOS is supported.
+        return __dirname.split('.app')[0]+'.app'
+    }
+}
+
+export default false

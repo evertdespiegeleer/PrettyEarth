@@ -4,3 +4,4 @@ module.exports = require('./index')
 exports.setRandomWallPaper = module.exports.setRandomWallPaper
 exports.updateMapData = module.exports.updateMapData
 exports.quit = module.exports.quit
+exports.AutoLauncher = module.exports.AutoLauncher
