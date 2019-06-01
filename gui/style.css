@@ -30,6 +30,12 @@ body .content > .arrow, html .content > .arrow {
   z-index: 2;
 }
 
+body .content > .arrow.border, html .content > .arrow.border {
+  border-color: transparent transparent #c8c8c8 transparent;
+  z-index: -1;
+  margin-top: -1px;
+}
+
 body .content .centerbox, html .content .centerbox {
   height: calc(100% - 20px);
   width: calc(100% - 20px);
@@ -61,6 +67,7 @@ body .content .centerbox .pagescroller, html .content .centerbox .pagescroller {
 }
 
 body .content .centerbox .pagescroller .box, html .content .centerbox .pagescroller .box {
+  position: relative;
   float: left;
   height: 100%;
   background-color: #fafafa;
@@ -104,7 +111,6 @@ body .content .centerbox .pagescroller .box.default .info .text, html .content .
 }
 
 body .content .centerbox .pagescroller .box.default .info .text .region, html .content .centerbox .pagescroller .box.default .info .text .region {
-  white-space: nowrap;
   width: 100%;
   font-size: 18px;
   text-align: left;
@@ -275,6 +281,101 @@ body .content .centerbox .pagescroller .box.information .infobox::-webkit-scroll
 
 body .content .centerbox .pagescroller .box.information .infobox a, html .content .centerbox .pagescroller .box.information .infobox a {
   color: cornflowerblue;
+}
+
+body .content .centerbox .pagescroller .box.settings .setsbox, html .content .centerbox .pagescroller .box.settings .setsbox {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-y: scroll;
+}
+
+body .content .centerbox .pagescroller .box.settings .setsbox::-webkit-scrollbar, html .content .centerbox .pagescroller .box.settings .setsbox::-webkit-scrollbar {
+  width: 0;
+}
+
+body .content .centerbox .pagescroller .box.settings .setsbox .setting, html .content .centerbox .pagescroller .box.settings .setsbox .setting {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: auto;
+  border-top: solid 0.5px #c8c8c8;
+}
+
+body .content .centerbox .pagescroller .box.settings .setsbox .setting:nth-child(1), html .content .centerbox .pagescroller .box.settings .setsbox .setting:nth-child(1) {
+  border-top: 0;
+}
+
+body .content .centerbox .pagescroller .box.settings .setsbox .setting .setName, html .content .centerbox .pagescroller .box.settings .setsbox .setting .setName {
+  width: 75%;
+  padding: 10px 20px 10px 10px;
+  font-size: 14px;
+}
+
+body .content .centerbox .pagescroller .box.settings .setsbox .setting .tgl, html .content .centerbox .pagescroller .box.settings .setsbox .setting .tgl {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body .content .centerbox .pagescroller .box.settings .setsbox .setting .tgl select, html .content .centerbox .pagescroller .box.settings .setsbox .setting .tgl select {
+  outline: none;
+  zoom: 1.1;
+  width: 76%;
+  margin: auto;
+}
+
+body .content .centerbox .pagescroller .box.settings .setsbox .setting .tgl input[type="checkbox"], html .content .centerbox .pagescroller .box.settings .setsbox .setting .tgl input[type="checkbox"] {
+  display: block;
+  margin: auto;
+  zoom: 1.8;
+}
+
+body .content .centerbox .pagescroller .box.settings .setsbox .setting .tgl button.quit, html .content .centerbox .pagescroller .box.settings .setsbox .setting .tgl button.quit {
+  margin: auto;
+  display: block;
+  cursor: pointer;
+  height: 55%;
+  width: 50%;
+  border: 0;
+  background-color: #ed6464;
+  color: #FFF;
+  font-size: 13px;
+  border-radius: 5px;
+  outline: none;
+  font-weight: 700;
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+}
+
+body .content .centerbox .pagescroller .box.settings .setsbox .setting .tgl button.quit:active, html .content .centerbox .pagescroller .box.settings .setsbox .setting .tgl button.quit:active {
+  background-color: #b44b4b;
 }
 
 body .content .centerbox .menubar, html .content .centerbox .menubar {

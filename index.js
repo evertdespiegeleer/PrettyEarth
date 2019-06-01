@@ -29,6 +29,11 @@ const updateMapData = () => {
     });
 }
 
+const quit = () => {
+    mb.window.close()
+    process.exit()
+}
+
 mb.on('ready', function ready () {
     //Up 'n running!
     updateMapData();
@@ -43,3 +48,4 @@ mb.on('ready', function ready () {
     });
 })
 exports.updateMapData = updateMapData
+exports.quit = quit

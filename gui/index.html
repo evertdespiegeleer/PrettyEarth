@@ -11,6 +11,7 @@
 <body>
     <div class="content">
         <div class="arrow"></div>
+        <div class="arrow border"></div>
         <div class="centerbox">
             <div class="pagescroller">
                 <div class="box default">
@@ -38,7 +39,42 @@
                     <button class="newBg"><i class="fas fa-magic"></i>&nbsp;&nbsp;New Wallpaper!</button>
                 </div>
                 <div class="box settings">
-                    settings
+                    <div class="setsbox">
+                        <div class="setting">
+                            <div class="setName">Start on startup</div>
+                            <div class="tgl">
+                                <input class="userset" type="checkbox" name="start_on_boot">
+                            </div>
+                        </div>
+                        <div class="setting">
+                            <div class="setName">Automatically change wallpaper</div>
+                            <div class="tgl">
+                                <input class="userset" type="checkbox" name="autochange">
+                            </div>
+                        </div>
+                        <div class="setting">
+                            <div class="setName">Interval</div>
+                            <div class="tgl">
+                                <select class="userset interval">
+                                    <option value="60">1m</option>
+                                    <option value="300">5m</option>
+                                    <option value="900">15m</option>
+                                    <option value="1800">30m</option>
+                                    <option value="3600">1h</option>
+                                    <option value="43200">12h</option>
+                                    <option value="86400">1d</option>
+                                    <option value="172800">2d</option>
+                                    <option value="604800">1w</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="setting">
+                            <div class="setName">Quit</div>
+                            <div class="tgl">
+                                <button class="quit"><i class="fas fa-power-off"></i></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="box information">
                     <div class="infobox">
@@ -57,19 +93,21 @@
                 </div>
                 <div class="box no_internet_connection">
                     <div class="text">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <br>PrettyEarth needs a working internet connection.
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <br>PrettyEarth needs a working internet connection.
                     </div>
                 </div>
             </div>
             <div class="menubar">
                 <div class="el active" link=".default"><i class="fas fa-newspaper"></i></div>
                 <div class="el" link=".setBg"><i class="fas fa-globe-europe"></i></div>
-                <!--<div class="el" link=".settings"><i class="fas fa-cog"></i></div>-->
+                <div class="el" link=".settings"><i class="fas fa-cog"></i></div>
                 <div class="el" link=".information"><i class="fas fa-info-circle"></i></div>
             </div>
         </div>
     </div>
     <script src="gui.js"></script>
+    <script src="settings.js"></script>
+    <script src="interval.js"></script>
 </body>
 </html>

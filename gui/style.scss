@@ -9,7 +9,6 @@ body, html {
     }
     .content {
         position: absolute;
-        //background-color: red;
         height: 200px;
         width: 300px;
         &>.arrow {
@@ -22,6 +21,11 @@ body, html {
             left:50%;
             transform: translate(-50%, 3px);
             z-index: 2;
+            &.border {
+                border-color: transparent transparent rgb(200, 200, 200) transparent;
+                z-index: -1;
+                margin-top: -1px;
+            }
         }
         .centerbox {
             height: calc(100% - 20px);
@@ -42,6 +46,7 @@ body, html {
                 height:0; //trick
                 overflow: hidden;
                 .box {
+                    position: relative;
                     float: left;
                     height: 100%;
                     background-color: rgb(250, 250, 250);
@@ -66,7 +71,7 @@ body, html {
                                 height: calc(100% - 40px);
                                 overflow-y: scroll;
                                 .region {
-                                    white-space: nowrap;
+                                    //white-space: nowrap;
                                     width: 100%;
                                     font-size: 18px;
                                     text-align: left;
@@ -196,6 +201,78 @@ body, html {
                             &::-webkit-scrollbar { width: 0 !important } //Hide scrollbar
                             a {
                                 color: cornflowerblue;
+                            }
+                        }
+                    }
+                    &.settings {
+                        .setsbox {
+                            position: absolute;
+                            width: 80%;
+                            height: 100%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            padding-top: 20px;
+                            padding-bottom: 20px;
+                            overflow-y: scroll;
+                            &::-webkit-scrollbar {
+                                width:0;
+                            }
+                            .setting {
+                                width: 100%;
+                                position: relative;
+                                display: flex;
+                                flex-direction: row;
+                                height: auto;
+                                border-top: solid 0.5px rgb(200, 200, 200);
+                                &:nth-child(1) {
+                                    border-top: 0;
+                                }
+                                .setName {
+                                    width: 75%;
+                                    padding: 10px 20px 10px 10px;
+                                    font-size: 14px;
+                                }
+                                .tgl {
+                                    position: relative;
+                                    flex-grow: 1;
+                                    height: auto;
+                                    justify-content: center;
+                                    flex-direction: column;
+                                    display: flex;
+                                    text-align: center;
+                                    justify-content: center;
+                                    flex-direction: column;
+                                    select {
+                                        //position: absolute;
+                                        outline: none;
+                                        zoom: 1.1;
+                                        width: 76%;
+                                        margin: auto;
+                                    }
+                                    input[type="checkbox"] {
+                                        display: block;
+                                        margin: auto;
+                                        zoom: 1.8;
+                                    }
+                                    button.quit {
+                                        margin: auto;
+                                        display: block;
+                                        cursor: pointer;
+                                        height: 55%;
+                                        width: 50%;
+                                        border: 0;
+                                        background-color: rgb(237, 100, 100);
+                                        color: #FFF;
+                                        font-size: 13px;
+                                        border-radius: 5px;
+                                        outline: none;
+                                        font-weight: 700;
+                                        transition: background-color 0.1s;
+                                        &:active {
+                                            background-color: rgb(180, 75, 75);
+                                        }
+                                    }                       
+                                }
                             }
                         }
                     }

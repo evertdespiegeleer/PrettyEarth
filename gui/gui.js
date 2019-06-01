@@ -1,9 +1,18 @@
 //access functions exported by start.js
-const remote = require('electron').remote.require('./start.js')
+
+const inElectron = (navigator.userAgent.toLowerCase().indexOf(' electron/')> -1);
+
+//if(inElectron){
+    const remote = require('electron').remote.require('./start.js')
+//}
 
 const setWallpaper = (cb) => {
     remote.setRandomWallPaper(()=>{
         remote.updateMapData()
+        if(window.settings) { //update date
+            window.settings.lastSetBg = (new Date).getTime()
+            localStorage.setItem('settings', JSON.stringify(window.settings))
+        }
         if(cb) cb()
     })
 }
