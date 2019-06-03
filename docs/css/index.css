@@ -1,0 +1,159 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  color: #5b85f8;
+}
+
+header {
+  position: relative;
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header h1 {
+  color: #FFF;
+  font-size: 10vw;
+  font-weight: 300;
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+header .downloadBtn {
+  cursor: pointer;
+  position: absolute;
+  bottom: -30px;
+  height: 60px;
+  line-height: 60px;
+  width: 300px;
+  left: calc(50% - 150px);
+  border-radius: 5px;
+  background-color: #5b85f8;
+  color: #FFF;
+  font-size: 20px;
+  -webkit-box-shadow: 0 4px 0 #3b56a0;
+          box-shadow: 0 4px 0 #3b56a0;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+header .downloadBtn .fab {
+  padding-right: 10px;
+}
+
+header .downloadBtn:active {
+  background-color: #3b56a0;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 0 0;
+          box-shadow: 0 0 0;
+}
+
+.descr {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 34px;
+}
+
+.descr .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+.descr .img video {
+  width: 80%;
+}
+
+.descr .img img {
+  width: 280px;
+}
+
+.descr .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.descr .text p {
+  width: 500px;
+  font-size: 18px;
+}
+
+footer {
+  background-color: #FAFBFC;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  color: #b4b4b4;
+}
+/*# sourceMappingURL=index.css.map */

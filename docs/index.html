@@ -1,1 +1,40 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PrettyEarth App</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>PrettyEarth</h1>
+        <div onclick="window.location='./dist/macOS.zip'" class="downloadBtn">
+            <i class="fab fa-apple"></i>Download for macOS
+        </div>
+    </header>
+
+    <div class="descr">
+        <div class="img">
+            <!--<img class="app" src="./img/app.png"></img>-->
+            <video controls autoplay loop>
+                <source src="./img/total.mov">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="text">
+            <p>
+                    Our planet is a beautiful place.<br>The <a href="https://chrome.google.com/webstore/detail/earth-view-from-google-ea/bhloflhklmhfpedakmangadcdofhnnoh">Google Chrome Earth View extension</a> by Google is a wonderful way to deliver stunning satellite images to us every time we open a new tab, inspiring us on our next web adventure.<br>But why stop there?<br>Why don't get impressed by the wonders of the earth when gazing at this more important rectangle on our screen, <i>our wallpaper</i>.<br><br>PrettyEarth now grants you the opportunity to bring our blue marble to your desktop.
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>
+            A project built with ❤️ by <a href="https://github.com/evertdespiegeleer">Evert De Spiegeleer</a>
+        </p>
+    </footer>
+</body>
+</html>

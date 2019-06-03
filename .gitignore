@@ -131,5 +131,6 @@ typings/
 
 */imageData.json
 *.jpg
-dist/
+/dist
+!LICENSES.chromium.html
 design/
