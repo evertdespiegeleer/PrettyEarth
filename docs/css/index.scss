@@ -101,3 +101,52 @@ footer {
     text-align: center;
     color: rgb(180, 180, 180);
 }
+
+@media screen and (max-width: 1000px) {
+    header {
+        height: 300px;
+        h1 {
+            font-size: 60px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+        }
+    }
+    .descr {
+        height: auto;
+        display: block;
+        width: 100%;
+        padding-top: 34px;
+        padding-bottom: 34px;
+        .img {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+            padding-top: 50px;
+            padding-bottom: 30px;
+            video {
+                width: 85%;
+                max-width: 600px;
+            }
+        }
+        .text {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+            flex-grow: 1;
+            p {
+                width: 85%;
+                max-width: 600px;
+                font-size: 18px;
+            }
+        }
+    }
+    footer {
+        height: 200px;
+        font-size: 15px;
+        padding-left: calc(50% - 100px);
+        padding-right: calc(50% - 100px);
+    }
+  }
+  

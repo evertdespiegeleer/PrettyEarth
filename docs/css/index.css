@@ -156,4 +156,72 @@ footer {
   text-align: center;
   color: #b4b4b4;
 }
+
+@media screen and (max-width: 1000px) {
+  header {
+    height: 300px;
+  }
+  header h1 {
+    font-size: 60px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+  }
+  .descr {
+    height: auto;
+    display: block;
+    width: 100%;
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+  .descr .img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+  .descr .img video {
+    width: 85%;
+    max-width: 600px;
+  }
+  .descr .text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  .descr .text p {
+    width: 85%;
+    max-width: 600px;
+    font-size: 18px;
+  }
+  footer {
+    height: 200px;
+    font-size: 15px;
+    padding-left: calc(50% - 100px);
+    padding-right: calc(50% - 100px);
+  }
+}
 /*# sourceMappingURL=index.css.map */
