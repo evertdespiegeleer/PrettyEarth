@@ -1,3 +1,5 @@
+mixpanel.track('app_started')
+
 //access functions exported by start.js
 
 const inElectron = (navigator.userAgent.toLowerCase().indexOf(' electron/')> -1);
@@ -102,6 +104,7 @@ window.checks = () => { //Executes every time the window opens
     }
     (()=>{ //Check the internet connection
         if(navigator.onLine) {
+            mixpanel.track('window_opened')
             //Connected
             if(document.querySelector('.pagescroller').scrollTop == document.querySelector('.no_internet_connection').offsetTop) {
                 document.querySelectorAll('.el')[0].click() //Go to page 1
