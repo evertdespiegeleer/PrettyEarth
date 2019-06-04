@@ -27,7 +27,11 @@ const mb = menubar({
 const updateMapData = () => {
     fs.readFile(`${dataloc}/imageData.json`, (err, data) => {  
         if (err) 
-        {console.log(err);
+        {
+            console.log(err);
+            if(err.code=='ENOENT'){
+                mb.window.webContents.executeJavaScript(`updateMapData('null')`)
+            }
         }
         mb.window.webContents.executeJavaScript(`updateMapData('${data}')`)
     });
