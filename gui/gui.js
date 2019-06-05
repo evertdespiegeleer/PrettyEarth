@@ -62,50 +62,63 @@ document.querySelector('.goToMaps').addEventListener('click', () => {
 })
 
 //Update wallpaper btn
-document.querySelector('button.newBg').addEventListener('click', () => {
+document.querySelector('.setBg button.newBg').addEventListener('click', () => {
+    const e = document.querySelector('.setBg button.newBg')
     setWallpaper()
+    e.classList.add('load')
+})
+document.querySelector('.first_launch button.newBg').addEventListener('click', () => {
+    const e = document.querySelector('.first_launch button.newBg')
+    if (!e.classList.contains('unclickable')) {setWallpaper()}
+    e.classList.add('unclickable')
+    e.innerHTML="Nice!"
+    setTimeout(()=>{document.querySelectorAll('.el')[1].click()}, 1500)
 })
 
 updateMapData = (jsondata) => {
-        let data = JSON.parse(jsondata)
-        if (data != null) {
+    let data = JSON.parse(jsondata)
+    if (data != null) {
+        try{
+            document.querySelectorAll('.menubar > .el')[0].classList.remove('unclickable')
+            document.querySelector('.setBg button.newBg').classList.remove('load')
+        } catch(e){}
+        document.querySelector('.map > .mapimg').setAttribute('src', data.image)
+        window.GMapsLink = data.map
+        let wikiSearchTerm;
+        if(data.region == '') { //special case
+            document.querySelector('.default > .info .region').innerHTML = data.country
+            document.querySelector('.default > .info .country').innerHTML = ''
+            wikiSearchTerm = data.country
+        }
+        else { //normal case
+            document.querySelector('.default > .info .country').innerHTML = data.country
+            document.querySelector('.default > .info .region').innerHTML = data.region
+            wikiSearchTerm = data.region
+        }
+        //get info about region from wikipedia
+        getJSON(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${encodeURI(wikiSearchTerm)}`, function(err,data){
+        let WikiText;
+        if(!err) {
             try{
-                document.querySelectorAll('.menubar > .el')[0].classList.remove('unclickable')
-            } catch(e){}
-            document.querySelector('.map > .mapimg').setAttribute('src', data.image)
-            window.GMapsLink = data.map
-            let wikiSearchTerm;
-            if(data.region == '') { //special case
-                document.querySelector('.default > .info .region').innerHTML = data.country
-                document.querySelector('.default > .info .country').innerHTML = ''
-                wikiSearchTerm = data.country
+                WikiText = data.query.pages[Object.keys(data.query.pages)[0]].extract || 'WikiText not available.'
             }
-            else { //normal case
-                document.querySelector('.default > .info .country').innerHTML = data.country
-                document.querySelector('.default > .info .region').innerHTML = data.region
-                wikiSearchTerm = data.region
-            }
-            //get info about region from wikipedia
-            getJSON(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${encodeURI(wikiSearchTerm)}`, function(err,data){
-            let WikiText;
-            if(!err) {
-                try{
-                    WikiText = data.query.pages[Object.keys(data.query.pages)[0]].extract || 'WikiText not available.'
-                }
-                catch(e) {
-                    WikiText = 'WikiText not available.'
-                }
-            }
-            else {
+            catch(e) {
                 WikiText = 'WikiText not available.'
             }
-            document.querySelector('.default > .info .wikitext').innerHTML = WikiText
-        })
+        }
+        else {
+            WikiText = 'WikiText not available.'
+        }
+        document.querySelector('.default > .info .wikitext').innerHTML = WikiText
+    })
+}
+else { //First ever launch
+    document.querySelectorAll('.menubar > .el')[0].classList.add('unclickable')
+    for (let e of document.querySelectorAll('.menubar > .el')){
+        if(e.classList.contains('active')) e.classList.remove('active') //set every tab inactive
     }
-    else {
-        document.querySelectorAll('.menubar > .el')[0].classList.add('unclickable')
-        document.querySelectorAll('.menubar > .el')[1].click()
-    }
+    pageSwitchTo('.first_launch')
+}
 }
 
 window.checks = () => { //Executes every time the window opens

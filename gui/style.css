@@ -217,28 +217,12 @@ body .content .centerbox .pagescroller .box.setBg, html .content .centerbox .pag
   position: relative;
 }
 
-body .content .centerbox .pagescroller .box.setBg button.newBg, html .content .centerbox .pagescroller .box.setBg button.newBg {
-  cursor: pointer;
+body .content .centerbox .pagescroller .box.setBg button, html .content .centerbox .pagescroller .box.setBg button {
   position: absolute;
-  height: 45px;
-  width: 75%;
-  border: 0;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: cornflowerblue;
-  color: #FFF;
-  font-size: 18px;
-  border-radius: 5px;
-  outline: none;
-  font-weight: 700;
-  -webkit-transition: background-color 0.1s;
-  transition: background-color 0.1s;
-}
-
-body .content .centerbox .pagescroller .box.setBg button.newBg:active, html .content .centerbox .pagescroller .box.setBg button.newBg:active {
-  background-color: #2f71e7;
 }
 
 body .content .centerbox .pagescroller .box.no_internet_connection, html .content .centerbox .pagescroller .box.no_internet_connection {
@@ -262,6 +246,23 @@ body .content .centerbox .pagescroller .box.no_internet_connection .text, html .
 body .content .centerbox .pagescroller .box.no_internet_connection .text .fas, html .content .centerbox .pagescroller .box.no_internet_connection .text .fas {
   font-size: 56px;
   padding-bottom: 15px;
+}
+
+body .content .centerbox .pagescroller .box.first_launch, html .content .centerbox .pagescroller .box.first_launch {
+  color: #787878;
+  padding-top: 20px;
+  text-align: center;
+}
+
+body .content .centerbox .pagescroller .box.first_launch h1, html .content .centerbox .pagescroller .box.first_launch h1 {
+  padding: 0;
+  font-size: 30px;
+  margin: 0;
+}
+
+body .content .centerbox .pagescroller .box.first_launch p, html .content .centerbox .pagescroller .box.first_launch p {
+  margin: 6px 0 10px 0;
+  font-size: 13px;
 }
 
 body .content .centerbox .pagescroller .box.information .infobox, html .content .centerbox .pagescroller .box.information .infobox {
@@ -413,5 +414,48 @@ body .content .centerbox .menubar .el, html .content .centerbox .menubar .el {
 
 body .content .centerbox .menubar .el.active, html .content .centerbox .menubar .el.active {
   color: cornflowerblue;
+}
+
+button.newBg {
+  cursor: pointer;
+  white-space: nowrap;
+  height: 45px;
+  width: auto;
+  border: 0;
+  padding: 0 25px 0 25px;
+  background-color: cornflowerblue;
+  color: #FFF;
+  font-size: 18px;
+  border-radius: 5px;
+  outline: none;
+  font-weight: 700;
+  -webkit-transition: background-color 0.1s, width 0.1s;
+  transition: background-color 0.1s, width 0.1s;
+}
+
+button.newBg .fa-hourglass-half {
+  display: none;
+}
+
+button.newBg:active {
+  background-color: #2f71e7;
+}
+
+button.newBg.unclickable {
+  cursor: default;
+  background-color: #787878;
+}
+
+button.newBg.load {
+  cursor: default;
+  background-color: #787878;
+}
+
+button.newBg.load .fa-hourglass-half {
+  display: inline;
+}
+
+button.newBg.load .fa-magic {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
