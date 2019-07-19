@@ -12,7 +12,8 @@ PrettyEarth is [Electron](https://electronjs.org/) based. It is, to be more part
 Currently, only macOS is supported. However, adaptation on other operating systems will be provided soon. Few modifications are needed.
 
 ### known issues and future developements
-- [ ] [macOS Mojave titlebar issue](https://github.com/electron/electron/issues/15008) (Electron related)
+- [ ] [macOS Mojave white line issue in dark mode](https://github.com/electron/electron/issues/15008) (Electron related)
+The Electron team have done what they could. The problem is reduced. The infamous line has become very thin and less noticeable. The underlying problem is OS-related. [Apple will probably fix the issue in Catalina.](https://github.com/electron/electron/issues/13164#issuecomment-500081463)
 - [ ] Windows support
 
 ## Build

@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=dist --icon=icon.icns --ignore='^/docs|^/dist|^/design'"
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=dist --icon=icon.icns --ignore='^/docs|^/dist|^/design' --darwinDarkModeSupport=true"
   },
   "author": "Evert De Spiegeleer",
   "license": "MIT",
