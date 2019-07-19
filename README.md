@@ -13,7 +13,6 @@ Currently, only macOS is supported. However, adaptation on other operating syste
 
 ### known issues and future developements
 - [ ] [macOS Mojave titlebar issue](https://github.com/electron/electron/issues/15008) (Electron related)
-- [ ] Disappearing/black icon in macOS Dark Mode
 - [ ] Windows support
 
 ## Build

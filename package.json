@@ -14,7 +14,7 @@
   "dependencies": {
     "auto-launch": "^5.0.5",
     "esm": "^3.2.25",
-    "menubar": "^5.2.3",
+    "menubar": "^6.0.6",
     "mkdirp": "^0.5.1",
     "path": "^0.12.7",
     "request": "^2.88.0"

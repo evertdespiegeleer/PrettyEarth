@@ -1,6 +1,6 @@
 import {Tray} from 'electron'
-import setRandomWallPaper from './setRandomWallPaper';
-import menubar from'menubar'
+import setRandomWallPaper from './setRandomWallPaper'
+import * as m from 'menubar'
 exports.setRandomWallPaper = setRandomWallPaper
 import fs from 'fs'
 import path from 'path'
@@ -9,13 +9,13 @@ import AutoLaunch from 'auto-launch'
 const dataloc = localDataLocation()
 const apploc = applocation()
 //Create menubar GUI (./gui/index.html)
-const mb = menubar({
+let mb = m.menubar({
     webPreferences:{
         nodeIntegration: true,
         webSecurity: false,
     },
     transparent: true,
-    icon: path.join(__dirname,'/gui/icon.png'),
+    icon: path.join(__dirname,'/gui/iconTemplate.png'),
     width: 300,
     height: 200,
     resizable: false,
@@ -48,7 +48,6 @@ const quit = () => {
 }
 
 mb.on('ready', function ready () {
-    //mb.tray = new Tray('./gui/icon.png')
     //Up 'n running!
     updateMapData();
     mb.window.on('focus', () => { //Run some checks everytime the window is openend
