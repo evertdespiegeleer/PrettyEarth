@@ -6,7 +6,7 @@
 const remote = require('electron').remote.require('./start.js')
 // }
 
-const prettyEarthVersion = '1.0.2'
+const prettyEarthVersion = '1.0.3'
 
 mixpanel.register({
   version: prettyEarthVersion
