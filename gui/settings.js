@@ -63,6 +63,7 @@
         }
         
         document.querySelector('.box.settings .setsbox .quit').addEventListener('click', () => {
+            mixpanel.track('app_quit')
             remote.quit()
         })
     }

@@ -7,6 +7,7 @@ intervalCheck = () => {
                 }
             }
         }
+        mixpanel.track('alive')
     }
 }
 
