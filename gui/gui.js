@@ -6,11 +6,8 @@
 const remote = require('electron').remote.require('./start.js')
 // }
 
-const prettyEarthVersion = '1.0.3'
+const prettyEarthVersion = '1.0.4'
 
-mixpanel.register({
-  version: prettyEarthVersion
-})
 mixpanel.people.set({
   version: prettyEarthVersion
 })
@@ -23,20 +20,20 @@ if (!localStorage.getItem('device_id')) { // Identify user
     first_launch_TS: `${(new Date()).getTime()}`,
     first_launch: `${(Date())}`,
     os_uname: `${require('os').userInfo().username}`,
-    isDev: false
+    isDev: false,
+    version: prettyEarthVersion
   })
   mixpanel.identify(uniqueId)
-  mixpanel.register({
-    PE_device_id: uniqueId,
-    first_launch_TS: `${(new Date()).getTime()}`,
-    first_launch: `${(Date())}`,
-    os_uname: `${require('os').userInfo().username}`,
-    isDev: false
-  })
   mixpanel.track('user_init')
-} else {
-  mixpanel.identify(localStorage.getItem('device_id'))
 }
+
+mixpanel.identify(localStorage.getItem('device_id'))
+mixpanel.register({
+  PE_device_id: localStorage.getItem('device_id'),
+  os_uname: `${require('os').userInfo().username}`,
+  isDev: false,
+  version: prettyEarthVersion
+})
 
 const setWallpaper = (cb) => {
   remote.setRandomWallPaper(() => {
