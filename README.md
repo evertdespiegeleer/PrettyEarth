@@ -45,5 +45,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ### :page_facing_up: License
 PrettyEarth is available under the [MIT](https://choosealicense.com/licenses/mit/) license.
 
-### :coffee:
+### :coffee: Coffee!
 [<img src="https://user-images.githubusercontent.com/1685680/61808727-4925de00-ae3c-11e9-9d60-66bef358fd8e.png" alt="drawing" width="180"/>](https://www.buymeacoffee.com/evertds "Buy me a coffee")
