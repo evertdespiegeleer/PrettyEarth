@@ -9,17 +9,21 @@ const dataloc = localDataLocation()
 const apploc = applocation()
 // Create menubar GUI (./gui/index.html)
 const mb = m.menubar({
-  webPreferences: {
-    nodeIntegration: true,
-    webSecurity: false
+  browserWindow: {
+    width: 300,
+    height: 200,
+    transparent: true,
+    resizable: false,
+    frame: false,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true
+    },
   },
-  transparent: true,
+  showDockIcon: false,
+  preloadWindow: true,
   icon: path.join(__dirname, '/gui/iconTemplate.png'),
-  width: 300,
-  height: 200,
-  resizable: false,
-  frame: false,
-  preloadWindow: true, // Faster at click
   index: `file://${__dirname}/gui/index.html`
 })
 

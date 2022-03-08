@@ -12,16 +12,17 @@
   "author": "Evert De Spiegeleer",
   "license": "MIT",
   "dependencies": {
+    "@electron/remote": "^2.0.5",
     "auto-launch": "^5.0.5",
     "esm": "^3.2.25",
-    "menubar": "^6.0.6",
+    "menubar": "^9.1.1",
     "mkdirp": "^0.5.1",
     "os": "^0.1.1",
     "path": "^0.12.7",
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "electron": "^11.5.0",
+    "electron": "^13.0.0",
     "electron-packager": "^13.1.1"
   }
 }
