@@ -6,7 +6,7 @@
   "main": "start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron --no-sandbox .",
+    "start": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=dist --icon=icon.icns --ignore='^/docs|^/dist|^/design' --darwinDarkModeSupport=true"
   },
   "author": "Evert De Spiegeleer",
@@ -21,7 +21,7 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "electron": "^16.0.0",
+    "electron": "^15.0.0",
     "electron-packager": "^15.4.0"
   }
 }
