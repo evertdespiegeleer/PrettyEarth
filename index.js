@@ -4,10 +4,13 @@ import fs from 'fs'
 import path from 'path'
 import { localDataLocation, applocation } from './localDataLocation'
 import AutoLaunch from 'auto-launch'
+import { app } from 'electron'
+
 exports.setRandomWallPaper = setRandomWallPaper
 const dataloc = localDataLocation()
 const apploc = applocation()
 // Create menubar GUI (./gui/index.html)
+require('@electron/remote/main').initialize()
 const mb = m.menubar({
   browserWindow: {
     width: 300,
@@ -51,6 +54,9 @@ const quit = () => {
 
 mb.on('ready', function ready () {
   // Up 'n running!
+  require('@electron/remote/main').enable(mb.window.webContents)
+  mb.window.reload()
+  app.dock.hide()
   updateMapData()
   mb.window.on('focus', () => { // Run some checks everytime the window is openend
     updateMapData()

@@ -3,7 +3,7 @@
 (() => {
   const inElectron = (navigator.userAgent.toLowerCase().indexOf(' electron/') > -1)
   if (inElectron) {
-    const remote = require('electron').remote.require('./start.js')
+    const remote = require('@electron/remote').require('./start.js')
     const settingsElms = document.querySelectorAll('.box.settings .setsbox .userset')
     const loadSettings = () => {
       if (localStorage.getItem('settings')) {
