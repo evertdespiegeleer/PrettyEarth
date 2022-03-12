@@ -3,10 +3,11 @@
 // access functions exported by start.js
 
 // if(inElectron){
-const remote = require('electron').remote.require('./start.js')
+// const remote = remote.require('./start.js')
+const remote = require('@electron/remote').require('./start.js')
 // }
 
-const prettyEarthVersion = '1.0.4'
+const prettyEarthVersion = '1.1.0'
 
 mixpanel.people.set({
   version: prettyEarthVersion

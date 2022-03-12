@@ -4,22 +4,29 @@ import fs from 'fs'
 import path from 'path'
 import { localDataLocation, applocation } from './localDataLocation'
 import AutoLaunch from 'auto-launch'
+import { app } from 'electron'
+
 exports.setRandomWallPaper = setRandomWallPaper
 const dataloc = localDataLocation()
 const apploc = applocation()
 // Create menubar GUI (./gui/index.html)
+require('@electron/remote/main').initialize()
 const mb = m.menubar({
-  webPreferences: {
-    nodeIntegration: true,
-    webSecurity: false
+  browserWindow: {
+    width: 300,
+    height: 200,
+    transparent: true,
+    resizable: false,
+    frame: false,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true
+    },
   },
-  transparent: true,
+  showDockIcon: false,
+  preloadWindow: true,
   icon: path.join(__dirname, '/gui/iconTemplate.png'),
-  width: 300,
-  height: 200,
-  resizable: false,
-  frame: false,
-  preloadWindow: true, // Faster at click
   index: `file://${__dirname}/gui/index.html`
 })
 
@@ -47,6 +54,9 @@ const quit = () => {
 
 mb.on('ready', function ready () {
   // Up 'n running!
+  require('@electron/remote/main').enable(mb.window.webContents)
+  mb.window.reload()
+  app.dock.hide()
   updateMapData()
   mb.window.on('focus', () => { // Run some checks everytime the window is openend
     updateMapData()
